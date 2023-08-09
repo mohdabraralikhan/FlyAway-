@@ -49,6 +49,7 @@ public class SearchControllerServlet extends HttpServlet {
 
         List<Flight> availableFlights = searchServiceServlet.getAvailableFlights(Source, Destination, date, Travellers);
         request.setAttribute("flights", availableFlights);
+        request.setAttribute("passengers",Travellers );
         RequestDispatcher dispatcher = request.getRequestDispatcher("AvailableFlights.jsp");
         dispatcher.forward(request, response);
     }

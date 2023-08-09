@@ -36,5 +36,6 @@ public class LoginControllerServlet extends HttpServlet {
         request.setAttribute("user",user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("AdminLoggedIn.jsp");
         dispatcher.forward(request,response);
+
     }
 }

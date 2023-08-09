@@ -10,10 +10,9 @@
 	<packaging>war</packaging>
 
 	<name>Flyaway Maven Webapp</name>
-	<!-- FIXME change it to the project's website -->
+
 	<url>http://www.example.com</url>
 	<repositories>
-		<!-- Added to get the Atmosphere 1.1.0-SNAPSHOT, can be removed when 1.1.0 is released -->
 		<repository>
 			<id>oss.sonatype.org-snapshot</id>
 			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
@@ -56,12 +55,12 @@
 			<scope>provided</scope>
 		</dependency>
 		<!--JSTL dependency-->
-		<!--      https://github.com/audgks5551/doc-servlet__2022_07_20-->
-<!--		<dependency>-->
-<!--			<groupId>org.glassfish.web</groupId>-->
-<!--			<artifactId>jakarta.servlet.jsp.jstl</artifactId>-->
-<!--			<version>3.0.0</version>-->
-<!--		</dependency>-->
+
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>

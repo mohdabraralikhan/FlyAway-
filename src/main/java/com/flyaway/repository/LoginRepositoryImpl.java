@@ -1,14 +1,13 @@
 package com.flyaway.repository;
 
 import com.flyaway.model.User;
-import com.mysql.cj.protocol.Resultset;
 
 import java.sql.*;
 
 public class LoginRepositoryImpl implements LoginRepository {
-    private String Url;
-    private String User;
-    private String Password;
+    private final String Url;
+    private final String User;
+    private final String Password;
 
     public LoginRepositoryImpl(String Url, String User, String Password) {
         this.Url = Url;
@@ -21,7 +20,6 @@ public class LoginRepositoryImpl implements LoginRepository {
         }
 
     }
-
 
     @Override
     public User getUser(String name, String email, String password) {
