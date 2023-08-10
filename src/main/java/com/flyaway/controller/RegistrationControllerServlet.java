@@ -17,14 +17,21 @@ public class RegistrationControllerServlet extends HttpServlet {
         flight.setAirline(request.getParameter("airline"));
         flight.setSource(request.getParameter("source"));
         flight.setDestination(request.getParameter("destination"));
-        flight.setTravellers(Integer.parseInt(request.getParameter("seats")));
-        flight.setPrice(Integer.parseInt(request.getParameter("price")));
+        try {
+            flight.setTravellers(Integer.parseInt(request.getParameter("seats")));
+        }catch(Exception e){
+            System.out.println(e + "\n" + "seats");
+        }
+        flight.setPrice(Integer.parseInt(request.getParameter("price").trim()));
         LocalDate departureDate = LocalDate.parse(request.getParameter("date"));
         flight.setDepartureDate(departureDate);
 
 
         HttpSession session = request.getSession();
         session.setAttribute("selectedFlight", flight);
-        response.sendRedirect("Payment.jsp");
+
+
+        response.sendRedirect("register.jsp");
+
     }
 }

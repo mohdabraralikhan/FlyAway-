@@ -17,6 +17,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 @WebServlet("/search")
 public class SearchControllerServlet extends HttpServlet {
 
@@ -49,7 +51,9 @@ public class SearchControllerServlet extends HttpServlet {
 
         List<Flight> availableFlights = searchServiceServlet.getAvailableFlights(Source, Destination, date, Travellers);
         request.setAttribute("flights", availableFlights);
-        request.setAttribute("passengers",Travellers );
+        HttpSession session =  request.getSession();
+        session.setAttribute("passengers", Travellers);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("AvailableFlights.jsp");
         dispatcher.forward(request, response);
     }

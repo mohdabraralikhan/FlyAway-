@@ -11,12 +11,12 @@
 </head>
 <body>
 
-<form action="register" method=POST>
+<form action="Payment.jsp" method=POST>
 <h2>Flyaway Registration </h2>
 <label>Username:<input type="text" name="name" id="name"></label>
 <label>Email:<input type="text" name="name" id="name"></label>
 <label>Password:<input type="text" name="name" id="name"></label>
-<input type="submit" value="Login">
+<input type="submit" value="Register">
 </form>
 </body>
 </html>

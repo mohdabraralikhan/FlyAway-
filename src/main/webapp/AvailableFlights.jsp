@@ -40,19 +40,13 @@
                <td> $${flight.getPrice()}</td>
                <td>${flight.getTravellers()}</td>
                <td> ${flight.getDepartureDate()}</td>
-               <td><a href="register.jsp?
-               airline=${flight.getAirline()}
-               &source=${flight.getSource()}
-               &destination=${flight.getDestination()}
-               &price=${flight.getPrice()}
-               &seats=${flight.getTravellers()}
-               &date=${flight.getDepartureDate()}
-               &passengers=${passengers}">Book Now</a></td>
+               <td><a href="register?airline=${flight.getAirline()}&source=${flight.getSource()}&destination=${flight.getDestination()}&price=${flight.getPrice()}&seats=${flight.getTravellers()}&date=${flight.getDepartureDate()}">Book Now</a></td>
 </tr>
         </c:forEach>
     </c:if>
     </tbody>
     </table>
+
     <c:if test="${empty flights}">
         <p>No flights available.</p>
     </c:if>
