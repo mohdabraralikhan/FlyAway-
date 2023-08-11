@@ -30,12 +30,19 @@ public class LoginControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        User user = login.getUser(name,email,password);
-        request.setAttribute("user",user);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("AdminLoggedIn.jsp");
-        dispatcher.forward(request,response);
+        String email = request.getParameter("mail");
+        String password = request.getParameter("pass");
+        User user = login.getUser(name, email, password);
 
+        if (user != null) {
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("AdminLoggedIn.jsp");
+        } else {
+            request.setAttribute("warningMessage", "Invalid credentials. Please try again.");
+
+            // Forward the request to the admin.jsp page
+            RequestDispatcher dispatcher = request.getRequestDispatcher("admin.jsp");
+            dispatcher.forward(request, response);        }
     }
+
 }

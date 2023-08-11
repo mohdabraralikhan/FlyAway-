@@ -7,8 +7,11 @@
     <title>Flight Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1><u>Flight Details</u></h1>
+<body style="text-align:center;">
+    <h1>Congratulations Your Flight Booking Has Been Confiremd Successfully!</h1>
+
+    <hr>
+     <h2>Booking Details</h2>
     <c:choose>
             <c:when test="${not empty sessionScope.selectedFlight}">
                 <c:set var="selectedFlight" value="${sessionScope.selectedFlight}" />
@@ -16,8 +19,9 @@
     <p><b>Airline:</b> ${sessionScope.selectedFlight.airline}</p>
     <p><b>Source:</b> ${sessionScope.selectedFlight.source}</p>
     <p><b>Destination:</b> ${sessionScope.selectedFlight.destination}</p>
-    <p><b>Travellers:</b> ${sessionScope.selectedFlight.travellers}</p>
-    <p><b>Price:</b> $${sessionScope.selectedFlight.price}</p>
+    <p><b>Travellers:</b> ${sessionScope.passengers}</p>
+    <p><b>Ticket Price:</b> $${sessionScope.selectedFlight.price}</p>
+    <p><b>Total Ticket Price:</b>$${sessionScope.selectedFlight.price *sessionScope.passengers }
     <p><b>Departure Date:</b> ${sessionScope.selectedFlight.departureDate}</p>
     </c:when>
         <c:otherwise>

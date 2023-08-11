@@ -6,11 +6,14 @@
 </head>
 <body>
 
-<form action="login" method=POST>
+<form action="login" method="POST">
+<c:if test="${not empty warningMessage}">
+    <p style="color: red;">${warningMessage}</p>
+</c:if>
 <h2>Flyaway Administrator </h2>
-<label>Username:<input type="text" name="name" id="name"></label>
-<label>Email:<input type="text" name="name" id="name"></label>
-<label>Password:<input type="text" name="name" id="name"></label>
+<label>Admin Name:<input type="text" name="name" id="name"></label>
+<label>Email:<input type="text" name="mail" id="mail"></label>
+<label>Password:<input type="text" name="pass" id="pass"></label>
 <input type="submit" value="Login">
 </form>
 </body>
