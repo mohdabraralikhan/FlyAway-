@@ -14,12 +14,12 @@ public class LoginControllerServlet extends HttpServlet {
 
    private final LoginServiceServlet login;
    public LoginControllerServlet(){
-    System.out.println("Login Controller Initialized");
+
     LoginServiceServlet loginServiceServlet = null;
     try{
         String Url = "jdbc:mysql://localhost:3306/flyaway";
         String User = "root";
-        String Password = "8499908716";
+        String Password = "";
         LoginRepository loginRepository = new LoginRepositoryImpl(Url,User,Password);
         login = new LoginServiceServlet(loginRepository);
     } catch (Exception e) {
@@ -29,7 +29,8 @@ public class LoginControllerServlet extends HttpServlet {
    }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
+
+       String name = request.getParameter("name");
         String email = request.getParameter("mail");
         String password = request.getParameter("pass");
         User user = login.getUser(name, email, password);

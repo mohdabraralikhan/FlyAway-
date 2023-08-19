@@ -17,7 +17,7 @@ public class ChangePasswordControllerServlet extends HttpServlet {
         // Initialize your LoginRepository here
         String Url = "jdbc:mysql://localhost:3306/flyaway";
         String User = "root";
-        String Password = "8499908716";
+        String Password = "";
         loginRepository = new LoginRepositoryImpl(Url, User, Password);
     }
 

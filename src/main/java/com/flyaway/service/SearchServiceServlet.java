@@ -18,4 +18,5 @@ public class SearchServiceServlet {
 
         return searchRepository.findFlightsByCriteria(source, destination, String.valueOf(date), travellers);
     }
+
 }

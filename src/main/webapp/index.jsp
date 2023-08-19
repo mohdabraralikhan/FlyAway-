@@ -14,6 +14,7 @@ a,.user,.admin{width:100%;height:100vh;}
 a{display:flex;text-decoration:none;color:inherit;text-align:center;justify-content: center;align-items: center;}
 .user{background-color:#121212;color:#ffffff;}
 .admin{background-color:#ffffff;color:#121212;}
+h1{margin:0;}
 </style></head>
 
 <body>

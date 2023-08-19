@@ -32,7 +32,7 @@ public class SearchControllerServlet extends HttpServlet {
         try {
             String Url = "jdbc:mysql://localhost:3306/flyaway";
             String User = "root";
-            String Password = "8499908716";
+            String Password = "";
             SearchRepository searchRepository = new SearchRepositoryImpl(Url, User, Password);
             searchService = new SearchServiceServlet(searchRepository);
         } catch (Exception e) {
@@ -52,6 +52,7 @@ public class SearchControllerServlet extends HttpServlet {
         List<Flight> availableFlights = searchServiceServlet.getAvailableFlights(Source, Destination, date, Travellers);
         request.setAttribute("flights", availableFlights);
         HttpSession session =  request.getSession();
+        //My database enlists total number of seats as travellers but to access the user input no of passengers
         session.setAttribute("passengers", Travellers);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("AvailableFlights.jsp");

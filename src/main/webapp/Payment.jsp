@@ -16,9 +16,7 @@
       int balance = gateway.getBalance();
       int passengers = (int) session.getAttribute("passengers");
 
-    out.println("selectedFlight: " + selectedFlight);
-    out.println("balance: " + balance);
-    out.println("passengers: " + passengers);
+
 
       int flightPrice = selectedFlight.getPrice();
       int total = passengers * flightPrice;

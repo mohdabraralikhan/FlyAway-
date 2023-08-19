@@ -23,16 +23,14 @@ public class SearchRepositoryImpl implements SearchRepository{
         }
     }
 
-        @Override
+
+
+    @Override
         public List<Flight> findFlightsByCriteria(String source, String destination, String date, int travellers) {
             List<Flight> flights = new LinkedList<>();
 
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
-                System.out.println("(repo)Established a MySQL Database Connection the query parameters are:"
-                        + "\nSource:" + source
-                        +"\nDestination:"+destination
-                        +"\nDate:"+date
-                        +"\nTravellers:"+travellers);
+
                 String query = "SELECT * FROM flights WHERE Source = ? AND Destination = ? AND DepartureDate = ? AND Travellers >= ? ";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setString(1, source);
@@ -61,4 +59,6 @@ public class SearchRepositoryImpl implements SearchRepository{
         }
 
 
-    }
+
+
+}
